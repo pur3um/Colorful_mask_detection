@@ -4,7 +4,7 @@
 //         html2canvas($('#screenshot').get(0)).then( function(canvas) {
 //             var data = canvas.toDataURL();
 //             console.log(data);
-//             // data:image/png;base64,iVBSoKA.....
+//             // data:_image/png;base64,iVBSoKA.....
 //         })
 //     })
 // })

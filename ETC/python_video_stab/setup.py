@@ -28,7 +28,7 @@ setup(name='vidstab',
           'cv2': ['opencv-contrib-python>=3.4.0']
       },
       tests_require=['pytest'],
-      keywords=['video stabilization', 'computer vision', 'image processing', 'opencv'],
+      keywords=['video stabilization', 'computer vision', '_image processing', 'opencv'],
       classifiers=[
           "Programming Language :: Python :: 3",
           "License :: OSI Approved :: MIT License",

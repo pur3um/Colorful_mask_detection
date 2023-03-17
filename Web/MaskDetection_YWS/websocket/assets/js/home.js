@@ -24,7 +24,7 @@ ws.onopen = () => {
 }
 
 ws.onmessage = message => {
-    // set the base64 string to the src tag of the image
+    // set the base64 string to the src tag of the _image
     var mess = message.data
 
     // 이미지 소스에 분석한 이미지 삽입

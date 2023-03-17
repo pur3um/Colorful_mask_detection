@@ -4,16 +4,16 @@ import cv2
 class Frame:
     """Utility for easier color format conversions.
 
-    :param image: OpenCV image as numpy array.
+    :param image: OpenCV _image as numpy array.
     :param color_format: Name of input color format or None.
          If str, the input must use the format that is used in OpenCV's cvtColor code parameter.
-         For example, if an image is bgr then input 'BGR' as seen in the cvtColor codes:
+         For example, if an _image is bgr then input 'BGR' as seen in the cvtColor codes:
         [cv2.COLOR_BGR2GRAY, COLOR_Luv2BGR].
-        If None, the color format will be assumed from shape of the image.
+        If None, the color format will be assumed from shape of the _image.
         The only possible outcomes of this assumption are: ['GRAY', 'BGR', 'BGRA'].
 
-    :ivar image: input image with possible color format conversions applied
-    :ivar color_format: str containing the current color format of image attribute.
+    :ivar image: input _image with possible color format conversions applied
+    :ivar color_format: str containing the current color format of _image attribute.
     """
     def __init__(self, image, color_format=None):
         self.image = image
@@ -34,7 +34,7 @@ class Frame:
             return 'BGRA'
 
         else:
-            raise ValueError(f'Unexpected frame image shape: {self.image.shape}')
+            raise ValueError(f'Unexpected frame _image shape: {self.image.shape}')
 
     @staticmethod
     def _lookup_color_conversion(from_format, to_format):

@@ -116,8 +116,8 @@ for f in file_list:
     try:
         result = overlay_transparent(ori, rotated_mask, mask_x, mask_y, overlay_size=(face_size, face_size))
     except:
+        # print('failed overlay _image')
         pass
-        # print('failed overlay image')
     
     # 실제 특징점 파악을 위한 데이터 확인
     img = cv2.rectangle(img, pt1=(face.left(), face.top()), pt2=(face.right(),face.bottom()),

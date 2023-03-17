@@ -8,14 +8,14 @@ def preprocessing(image_data, final_height, final_width, apply_augmentation=Fals
     """Image resizing operation handled before batch operations.
     inputs:
         image_data = tensorflow dataset image_data
-        final_height = final image height after resizing
-        final_width = final image width after resizing
+        final_height = final _image height after resizing
+        final_width = final _image width after resizing
     outputs:
         img = (final_height, final_width, channels)
         gt_boxes = (gt_box_size, [y1, x1, y2, x2])
         gt_labels = (gt_box_size)
     """
-    img = image_data["image"]
+    img = image_data["_image"]
     gt_boxes = image_data["objects"]["bbox"]
     gt_labels = tf.cast(image_data["objects"]["label"] + 1, tf.int32)
     if evaluate:
@@ -36,7 +36,7 @@ def get_random_bool():
     return tf.greater(tf.random.uniform((), dtype=tf.float32), 0.5)
 
 def randomly_apply_operation(operation, img, gt_boxes):
-    """Randomly applying given method to image and ground truth boxes.
+    """Randomly applying given method to _image and ground truth boxes.
     inputs:
         operation = callable method
         img = (height, width, depth)
@@ -52,7 +52,7 @@ def randomly_apply_operation(operation, img, gt_boxes):
     )
 
 def flip_horizontally(img, gt_boxes):
-    """Flip image horizontally and adjust the ground truth boxes.
+    """Flip _image horizontally and adjust the ground truth boxes.
     inputs:
         img = (height, width, depth)
         gt_boxes = (ground_truth_object_count, [y1, x1, y2, x2])
@@ -108,7 +108,7 @@ def get_custom_imgs(custom_image_path):
     inputs:
         custom_image_path = folder of the custom images
     outputs:
-        custom image list = [path1, path2]
+        custom _image list = [path1, path2]
     """
     img_paths = []
     for path, dir, filenames in os.walk(custom_image_path):
@@ -120,9 +120,9 @@ def get_custom_imgs(custom_image_path):
 def custom_data_generator(img_paths, final_height, final_width):
     """Yielding custom entities as dataset.
     inputs:
-        img_paths = custom image paths
-        final_height = final image height after resizing
-        final_width = final image width after resizing
+        img_paths = custom _image paths
+        final_height = final _image height after resizing
+        final_width = final _image width after resizing
     outputs:
         img = (final_height, final_width, depth)
         dummy_gt_boxes = (None, None)

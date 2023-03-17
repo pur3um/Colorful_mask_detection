@@ -5,8 +5,8 @@ from detect import mask_detector
 
 def from_b64(uri):
     '''
-        Convert from b64 uri to OpenCV image
-        Sample input: 'data:image/jpg;base64,/9j/4AAQSkZJR......'
+        Convert from b64 uri to OpenCV _image
+        Sample input: 'data:_image/jpg;base64,/9j/4AAQSkZJR......'
     '''
     encoded_data = uri.split(',')[1]
     data = base64.b64decode(encoded_data)
@@ -16,12 +16,12 @@ def from_b64(uri):
 
 def to_b64(img):
     '''
-        Convert from OpenCV image to b64 uri
-        Sample output: 'data:image/jpg;base64,/9j/4AAQSkZJR......'
+        Convert from OpenCV _image to b64 uri
+        Sample output: 'data:_image/jpg;base64,/9j/4AAQSkZJR......'
     '''
     _, buffer = cv2.imencode('.jpg', img)
     uri = base64.b64encode(buffer).decode('utf-8')
-    return f'data:image/jpg;base64,{uri}'
+    return f'data:_image/jpg;base64,{uri}'
 
 def img_processer(data):
     try:

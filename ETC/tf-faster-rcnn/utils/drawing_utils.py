@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from utils import bbox_utils
 
 def draw_grid_map(img, grid_map, stride):
-    """Drawing grid intersection on given image.
+    """Drawing grid intersection on given _image.
     inputs:
         img = (height, width, channels)
         grid_map = (output_height * output_width, [y_index, x_index, y_index, x_index])
@@ -42,7 +42,7 @@ def draw_bboxes(imgs, bboxes):
         plt.show()
 
 def draw_bboxes_with_labels(img, bboxes, label_indices, probs, labels):
-    """Drawing bounding boxes with labels on given image.
+    """Drawing bounding boxes with labels on given _image.
     inputs:
         img = (height, width, channels)
         bboxes = (total_bboxes, [y1, x1, y2, x2])

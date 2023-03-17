@@ -4,13 +4,13 @@ from .frame import Frame
 
 
 def layer_overlay(foreground, background):
-    """put an image over the top of another
+    """put an _image over the top of another
 
     Intended for use in VidStab class to create a trail of previous frames in the stable video output.
 
-    :param foreground: image to be laid over top of background image
-    :param background: image to over laid with foreground image
-    :return: return combined image where foreground is laid over background
+    :param foreground: _image to be laid over top of background _image
+    :param background: _image to over laid with foreground _image
+    :return: return combined _image where foreground is laid over background
 
     >>> from vidstab import VidStab, layer_overlay, layer_blend
     >>>
@@ -32,12 +32,12 @@ def layer_overlay(foreground, background):
 
 
 def layer_blend(foreground, background, foreground_alpha=.6):
-    """blend a foreground image over background (wrapper for cv2.addWeighted)
+    """blend a foreground _image over background (wrapper for cv2.addWeighted)
 
-    :param foreground: image to be laid over top of background image
-    :param background: image to over laid with foreground image
+    :param foreground: _image to be laid over top of background _image
+    :param background: _image to over laid with foreground _image
     :param foreground_alpha: alpha to apply to foreground; (1 - foreground_alpha) applied to background
-    :return: return combined image where foreground is laid over background with alpha
+    :return: return combined _image where foreground is laid over background with alpha
 
     >>> from vidstab import VidStab, layer_overlay, layer_blend
     >>>

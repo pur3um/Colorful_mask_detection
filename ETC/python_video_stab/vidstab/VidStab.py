@@ -57,7 +57,7 @@ class VidStab:
     :param kwargs: Keyword arguments for keypoint detector.
 
     :ivar kp_method: a string naming the keypoint detector being used
-    :ivar processing_max_dim: max image dimension while processing transforms
+    :ivar processing_max_dim: max _image dimension while processing transforms
     :ivar kp_detector: the keypoint detector object being used
     :ivar trajectory: a 2d showing the trajectory of the input video
     :ivar smoothed_trajectory: a 2d numpy array showing the smoothed trajectory of the input video
@@ -416,7 +416,7 @@ class VidStab:
         returned.  When ``input_frame is None`` stabilization will still be attempted, if there are not frames left to
         process then ``None`` will be returned.
 
-        :param input_frame: An OpenCV image (as numpy array) or None
+        :param input_frame: An OpenCV _image (as numpy array) or None
         :param smoothing_window: window size to use when smoothing trajectory
         :param border_type: How to handle negative space created by stabilization translations/rotations.
                             Options: ``['black', 'reflect', 'replicate']``

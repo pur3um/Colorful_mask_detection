@@ -1,7 +1,7 @@
 import tensorflow as tf
 
 def generate_base_anchors(hyper_params):
-    """Generating top left anchors for given anchor_ratios, anchor_scales and image size values.
+    """Generating top left anchors for given anchor_ratios, anchor_scales and _image size values.
     inputs:
         hyper_params = dictionary
 
@@ -21,7 +21,7 @@ def generate_base_anchors(hyper_params):
     return tf.cast(base_anchors, dtype=tf.float32)
 
 def generate_anchors(hyper_params):
-    """Broadcasting base_anchors and generating all anchors for given image parameters.
+    """Broadcasting base_anchors and generating all anchors for given _image parameters.
     inputs:
         hyper_params = dictionary
 
@@ -153,8 +153,8 @@ def normalize_bboxes(bboxes, height, width):
     """Normalizing bounding boxes.
     inputs:
         bboxes = (batch_size, total_bboxes, [y1, x1, y2, x2])
-        height = image height
-        width = image width
+        height = _image height
+        width = _image width
     outputs:
         normalized_bboxes = (batch_size, total_bboxes, [y1, x1, y2, x2])
             in normalized form [0, 1]
@@ -170,8 +170,8 @@ def denormalize_bboxes(bboxes, height, width):
     inputs:
         bboxes = (batch_size, total_bboxes, [y1, x1, y2, x2])
             in normalized form [0, 1]
-        height = image height
-        width = image width
+        height = _image height
+        width = _image width
     outputs:
         denormalized_bboxes = (batch_size, total_bboxes, [y1, x1, y2, x2])
     """

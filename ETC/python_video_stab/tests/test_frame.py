@@ -22,7 +22,7 @@ def test_set_color_format():
     with pytest.raises(ValueError) as err:
         Frame(np.zeros((1, 2, 42)))
 
-    assert 'Unexpected frame image shape: (1, 2, 42)' in str(err.value)
+    assert 'Unexpected frame _image shape: (1, 2, 42)' in str(err.value)
 
 
 def test_cvt_color():
